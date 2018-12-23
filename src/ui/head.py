@@ -1,5 +1,7 @@
+import os
 import sys
 
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QTextLine, QPixmap
 from PyQt5.QtWidgets import QWidget, QLabel, QHBoxLayout, QApplication, QLineEdit, QPushButton
 
@@ -24,8 +26,10 @@ class Head(QWidget):
         # 放了个图片
         uNameLabel = QLabel("sakura")
         closeLabel = QLabel()
-        pixmap = QPixmap('F:\\月泉\\test\\ssmusic\\src\\resource\\img\\rin.png') \
-            .scaled(closeLabel.width(), closeLabel.height())
+        print(os.path.abspath(".."))
+        imgPath = os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")
+        print(imgPath)
+        pixmap = QPixmap(imgPath).scaled(closeLabel.width(), closeLabel.height())
         closeLabel.setPixmap(pixmap)
         closeLabel.setMinimumSize(40, 40)
         closeLabel.setMaximumSize(40, 40)
@@ -41,6 +45,7 @@ class Head(QWidget):
         headLayout.addWidget(closeLabel)
 
         self.setLayout(headLayout)
+        # self.setWindowFlags(Qt.FramelessWindowHint)
 
     # 查询方法
     def search(self):

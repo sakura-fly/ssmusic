@@ -1,5 +1,6 @@
+import sys
+
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTextEdit, QApplication
-from future.moves import sys
 
 
 class Test(QWidget):

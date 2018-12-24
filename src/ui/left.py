@@ -1,6 +1,5 @@
 import sys
 
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QApplication, QVBoxLayout
 
 from src.ui.orderList import OrderList

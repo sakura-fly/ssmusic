@@ -26,9 +26,7 @@ class Head(QWidget):
         # 放了个图片
         uNameLabel = QLabel("sakura")
         closeLabel = QLabel()
-        print(os.path.abspath(".."))
         imgPath = os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")
-        print(imgPath)
         pixmap = QPixmap(imgPath).scaled(closeLabel.width(), closeLabel.height())
         closeLabel.setPixmap(pixmap)
         closeLabel.setMinimumSize(40, 40)

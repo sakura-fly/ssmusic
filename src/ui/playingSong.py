@@ -4,8 +4,10 @@ import sys
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QApplication
 
+from src.single.single import Singleton
 
-class PlayingSong(QWidget):
+
+class PlayingSong(Singleton, QWidget):
     def __init__(self):
         super().__init__()
 

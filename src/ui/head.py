@@ -5,8 +5,10 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QTextLine, QPixmap
 from PyQt5.QtWidgets import QWidget, QLabel, QHBoxLayout, QApplication, QLineEdit, QPushButton
 
+from src.single.single import Singleton
 
-class Head(QWidget):
+
+class Head(Singleton, QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()

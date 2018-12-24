@@ -4,10 +4,11 @@ import sys
 from PyQt5.QtGui import QStandardItem, QIcon, QStandardItemModel
 from PyQt5.QtWidgets import QWidget, QListView, QApplication, QMessageBox
 
+from src.single.single import Singleton
 from src.ui.playingSong import PlayingSong
 
 
-class OrderList(QListView):
+class OrderList(Singleton, QListView):
     def __init__(self):
         super().__init__()
 

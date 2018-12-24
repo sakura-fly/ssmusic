@@ -5,8 +5,10 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QWidget, QPushButton, QLabel, QSlider, QHBoxLayout, QApplication
 
+from src.single.single import Singleton
 
-class Bottom(QWidget):
+
+class Bottom(Singleton, QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -48,4 +50,3 @@ if __name__ == "__main__":
     head = Bottom()
     head.show()
     sys.exit(app.exec_())
-

@@ -1,12 +1,14 @@
 import sys
 
+import time
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QApplication, QVBoxLayout
 
+from src.single.single import Singleton
 from src.ui.orderList import OrderList
 from src.ui.playingSong import PlayingSong
 
 
-class Left(QWidget):
+class Left(Singleton, QWidget):
     def __init__(self):
         super().__init__()
 

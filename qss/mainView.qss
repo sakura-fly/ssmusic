@@ -1,0 +1,16 @@
+QVBoxLayout {
+    margin: 0;
+    padding: 0;
+    background-color: #6cf;
+}
+
+QHBoxLayout {
+    margin: 0;
+    padding: 0;
+    background-color: #6cf;
+}
+
+QWidget{
+    background-color: #6cf;
+
+}

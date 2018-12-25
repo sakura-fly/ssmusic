@@ -13,21 +13,22 @@ from src.ui.songTable import SongTable
 
 
 class MainView(Singleton, QWidget):
-    # def __init__(self):
-    #     super().__init__()
-    #
-    #     self.initUI()
 
     def initUI(self):
+        with open("../../qss/mainView.qss") as f:
+            ss = f.read()
+        self.setStyleSheet(ss)
+
         mainLayout = QVBoxLayout()
         centerLayout = QHBoxLayout()
 
         left = Left()
+        left.setObjectName("left")
+        left.setStyleSheet(ss)
         songTable = SongTable()
         head = Head()
         bottom = Bottom()
 
-        left.setMaximumWidth(160)
 
         centerLayout.addWidget(left)
         centerLayout.addWidget(songTable)

@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5.QtCore import QModelIndex, Qt
-from PyQt5.QtWidgets import QWidget, QTableWidget, QApplication, QTableWidgetItem, QAbstractItemView
+from PyQt5.QtWidgets import QWidget, QTableWidget, QApplication, QTableWidgetItem, QAbstractItemView, QHBoxLayout
 
 from src.single.single import Singleton
 
@@ -13,7 +13,7 @@ class SongTable(Singleton, QWidget):
         self.initUI()
 
     def initUI(self):
-        tableWidget = QTableWidget(self)  # 创建一个表格
+        tableWidget = QTableWidget()  # 创建一个表格
 
         # 标头内容
         tableHead = ["标题", "歌手", "专辑", "时长"]
@@ -50,8 +50,9 @@ class SongTable(Singleton, QWidget):
             print(songMsgDup)
             tableWidget.setItem(songMsgDup[0], songMsgDup[1], QTableWidgetItem(songMsgDup[2]))
 
-        tableWidget.resize(600, 600)
-        self.resize(600, 600)
+        layout = QHBoxLayout()
+        layout.addWidget(tableWidget)
+        self.setLayout(layout)
         self.show()
 
     def playSong(self, model: QModelIndex):

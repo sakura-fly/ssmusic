@@ -1,16 +1,20 @@
 import sys
+from time import sleep
 
 from PyQt5.QtCore import QModelIndex, Qt
 from PyQt5.QtWidgets import QWidget, QTableWidget, QApplication, QTableWidgetItem, QAbstractItemView, QHBoxLayout
 
+from src.model.song import Song
 from src.single.single import Singleton
+from src.ui.left import Left
+from src.ui.playingSong import PlayingSong
 
 
 class SongTable(Singleton, QWidget):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
+    # def __init__(self):
+    #     super().__init__()
+    #
+    #     self.initUI()
 
     def initUI(self):
         tableWidget = QTableWidget()  # 创建一个表格
@@ -56,7 +60,16 @@ class SongTable(Singleton, QWidget):
         self.show()
 
     def playSong(self, model: QModelIndex):
-        print("选择了", self.songList[model.row()]["title"])
+        # print("选择了", self.songList[model.row()])
+        # song = Song()
+        # song.fromDict(self.songList[model.row()])
+        print("选择了", Song().fromDict(self.songList[model.row()]).__dict__)
+        song = PlayingSong()
+        sleep(1)
+        song2 = PlayingSong()
+        print(song is song2)
+        print(song is Left().playintSong)
+        PlayingSong().changeSong(Song().fromDict(self.songList[model.row()]))
 
 
 if __name__ == '__main__':

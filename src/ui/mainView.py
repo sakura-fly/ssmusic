@@ -12,16 +12,15 @@ from src.ui.playingSong import PlayingSong
 from src.ui.songTable import SongTable
 
 
-class MainView(Singleton,QWidget):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
+class MainView(Singleton, QWidget):
+    # def __init__(self):
+    #     super().__init__()
+    #
+    #     self.initUI()
 
     def initUI(self):
         mainLayout = QVBoxLayout()
         centerLayout = QHBoxLayout()
-
 
         left = Left()
         songTable = SongTable()

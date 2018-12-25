@@ -9,9 +9,9 @@ from src.single.single import Singleton
 
 
 class Head(Singleton, QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
+    # def __init__(self):
+    #     super().__init__()
+    #     self.initUI()
 
     def initUI(self):
         # 左边标题

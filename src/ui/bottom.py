@@ -9,9 +9,6 @@ from src.single.single import Singleton
 
 
 class Bottom(Singleton, QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
 
     def initUI(self):
         previousBtn = QLabel()

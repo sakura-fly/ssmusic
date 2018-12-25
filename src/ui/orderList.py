@@ -9,10 +9,10 @@ from src.ui.playingSong import PlayingSong
 
 
 class OrderList(Singleton, QListView):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
+    # def __init__(self):
+    #     super().__init__()
+    #
+    #     self.initUI()
 
     def initUI(self):
         self.setViewMode(QListView.ListMode)

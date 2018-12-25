@@ -4,14 +4,15 @@ import sys
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QApplication
 
+from src.model.song import Song
 from src.single.single import Singleton
 
 
 class PlayingSong(Singleton, QWidget):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
+    # def __init__(self):
+    #     super().__init__()
+    #
+    #     self.initUI()
 
     def initUI(self):
         layout = QVBoxLayout()
@@ -22,8 +23,11 @@ class PlayingSong(Singleton, QWidget):
         layout.addWidget(self.songNameLabel)
         self.setLayout(layout)
 
-    def changeSong(self, index):
-        self.songNameLabel.setText(index)
+    def changeSong(self, song: Song):
+        print(self.songerLabel.text())
+        self.songNameLabel.setText(song.title)
+        self.songerLabel.setText(song.songer)
+        print(self.songerLabel.text())
 
 
 if __name__ == "__main__":

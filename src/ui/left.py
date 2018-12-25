@@ -9,10 +9,10 @@ from src.ui.playingSong import PlayingSong
 
 
 class Left(Singleton, QWidget):
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
+    # def __init__(self):
+    #     super().__init__()
+    #
+    #     self.initUI()
 
     def initUI(self):
         layout = QVBoxLayout()
@@ -22,9 +22,9 @@ class Left(Singleton, QWidget):
         layout.addWidget(self.playintSong)
         self.setLayout(layout)
 
-    def keyPressEvent(self, QKeyEvent):
-        print(QKeyEvent.key())
-        self.playintSong.changeSong(str(QKeyEvent.key()))
+    # def keyPressEvent(self, QKeyEvent):
+    #     print(QKeyEvent.key())
+    #     self.playintSong.changeSong(str(QKeyEvent.key()))
 
 
 if __name__ == "__main__":

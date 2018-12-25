@@ -16,13 +16,19 @@ class OrderList(Singleton, QListView):
 
     def initUI(self):
         self.setViewMode(QListView.ListMode)
-        item_1 = QStandardItem(QIcon(os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")), "列表A");
-        item_2 = QStandardItem(QIcon(os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")), "列表B");
-        item_3 = QStandardItem(QIcon(os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")), "列表C");
+        mOrderList = [
+            "列表1",
+            "列表2",
+            "列表3",
+            "列表4",
+            "列表5",
+            "列表6",
+            "列表7",
+        ]
         model = QStandardItemModel()
-        model.appendRow(item_1)
-        model.appendRow(item_2)
-        model.appendRow(item_3)
+        for order in mOrderList:
+            item = QStandardItem(QIcon(os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")), order)
+            model.appendRow(item)
         self.clicked.connect(self.clickOrder)
         self.setModel(model)
 

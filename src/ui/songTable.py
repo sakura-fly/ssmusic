@@ -2,7 +2,8 @@ import sys
 from time import sleep
 
 from PyQt5.QtCore import QModelIndex, Qt
-from PyQt5.QtWidgets import QWidget, QTableWidget, QApplication, QTableWidgetItem, QAbstractItemView, QHBoxLayout
+from PyQt5.QtWidgets import QWidget, QTableWidget, QApplication, QTableWidgetItem, QAbstractItemView, QHBoxLayout, \
+    QHeaderView
 
 from src.model.song import Song
 from src.single.single import Singleton
@@ -39,7 +40,11 @@ class SongTable(Singleton, QWidget):
         tableWidget.setHorizontalHeaderLabels(tableHead)
         # 设置总标题，序号
         tableWidget.setVerticalHeaderLabels([str(i) for i in range(1, len(self.songList) + 1)])
-        # 点击
+        # 列宽
+        tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+
+# 点击
         # tableWidget.clicked.connect(self.playSong)
         # 双击
         tableWidget.doubleClicked.connect(self.playSong)

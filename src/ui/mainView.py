@@ -41,6 +41,7 @@ class MainView(Singleton, QWidget):
 
         self.setLayout(mainLayout)
         # self.setWindowFlags(Qt.SplashScreen)
+        self.resize(1200, 600)
         self.show()
 
 

@@ -19,8 +19,8 @@ class PlayingSong(Singleton, QWidget):
         self.songNameLabel = QLabel("songName")
         self.songerLabel = QLabel("songer")
 
-        layout.addWidget(self.songerLabel)
         layout.addWidget(self.songNameLabel)
+        layout.addWidget(self.songerLabel)
         self.setLayout(layout)
 
     def changeSong(self, song: Song):

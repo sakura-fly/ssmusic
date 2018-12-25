@@ -60,15 +60,6 @@ class SongTable(Singleton, QWidget):
         self.show()
 
     def playSong(self, model: QModelIndex):
-        # print("选择了", self.songList[model.row()])
-        # song = Song()
-        # song.fromDict(self.songList[model.row()])
-        print("选择了", Song().fromDict(self.songList[model.row()]).__dict__)
-        song = PlayingSong()
-        sleep(1)
-        song2 = PlayingSong()
-        print(song is song2)
-        print(song is Left().playintSong)
         PlayingSong().changeSong(Song().fromDict(self.songList[model.row()]))
 
 

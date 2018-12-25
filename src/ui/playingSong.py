@@ -24,10 +24,8 @@ class PlayingSong(Singleton, QWidget):
         self.setLayout(layout)
 
     def changeSong(self, song: Song):
-        print(self.songerLabel.text())
         self.songNameLabel.setText(song.title)
         self.songerLabel.setText(song.songer)
-        print(self.songerLabel.text())
 
 
 if __name__ == "__main__":

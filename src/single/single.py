@@ -1,5 +1,5 @@
 class Singleton:
-    __have = False
+    __first = True
 
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, '_inst'):
@@ -7,8 +7,8 @@ class Singleton:
         return cls._inst
 
     def __init__(self):
-        if not self.__have:
-            self.__have = True
+        if self.__first:
+            self.__first = False
             super().__init__()
             self.initUI()
 

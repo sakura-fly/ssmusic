@@ -21,7 +21,7 @@ class SongTable(Singleton, QWidget):
         tableZd = ["title", "songer", "album", "long"]
 
         # 表格内容
-        songList = [
+        self.songList = [
             {"title": "Fallen Angel", "songer": "Mitsunori Ikeda", "album": 'Panty&Stocking', "long": "04:27"},
             {"title": "霞光", "songer": "曲锦楠", "album": '霞光', "long": "02:37", "mm": '233'},
             {"title": "New Kings", "songer": "遠藤幹雄", "album": 'K MISSING KINGS Original Sound Track', "long": "03:01"},
@@ -30,22 +30,22 @@ class SongTable(Singleton, QWidget):
         # 列数
         tableWidget.setColumnCount(len(tableHead))
         # 行数
-        tableWidget.setRowCount(len(songList))
+        tableWidget.setRowCount(len(self.songList))
         # 设置横标题
         tableWidget.setHorizontalHeaderLabels(tableHead)
         # 设置总标题，序号
-        tableWidget.setVerticalHeaderLabels([str(i) for i in range(1, len(songList) + 1)])
+        tableWidget.setVerticalHeaderLabels([str(i) for i in range(1, len(self.songList) + 1)])
         # 点击
-        tableWidget.clicked.connect(self.playSong)
+        # tableWidget.clicked.connect(self.playSong)
         # 双击
         tableWidget.doubleClicked.connect(self.playSong)
         # 禁止编辑
         tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
         for songMsgDup in [
-            (colIndex, rowIndex, songList[colIndex].get(tableZd[rowIndex]))  # (列数,行数,内容)
+            (colIndex, rowIndex, self.songList[colIndex].get(tableZd[rowIndex]))  # (列数,行数,内容)
             for rowIndex in range(len(tableZd))  # 第几列
-            for colIndex in range(len(songList))  # 第几行
+            for colIndex in range(len(self.songList))  # 第几行
         ]:
             print(songMsgDup)
             tableWidget.setItem(songMsgDup[0], songMsgDup[1], QTableWidgetItem(songMsgDup[2]))
@@ -56,7 +56,7 @@ class SongTable(Singleton, QWidget):
         self.show()
 
     def playSong(self, model: QModelIndex):
-        print(model.row())
+        print("选择了", self.songList[model.row()]["title"])
 
 
 if __name__ == '__main__':

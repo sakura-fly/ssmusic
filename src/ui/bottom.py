@@ -19,11 +19,18 @@ class Bottom(Singleton, QWidget):
         nextBtn = QLabel()
 
         imgPath = os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")
-        pixmap = QPixmap(imgPath)
+        pixmap = QPixmap(imgPath).scaled(previousBtn.width(), previousBtn.height())
 
         previousBtn.setPixmap(pixmap)
         playBtn.setPixmap(pixmap)
         nextBtn.setPixmap(pixmap)
+
+        previousBtn.setMinimumSize(20, 20)
+        playBtn.setMinimumSize(20, 20)
+        nextBtn.setMinimumSize(20, 20)
+        previousBtn.setMaximumSize(20, 20)
+        playBtn.setMaximumSize(20, 20)
+        nextBtn.setMaximumSize(20, 20)
 
         playedTime = QLabel("00:00")
         songLong = QLabel("04:00")

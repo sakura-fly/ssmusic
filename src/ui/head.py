@@ -27,12 +27,12 @@ class Head(Singleton, QWidget):
 
         # 放了个图片
         uNameLabel = QLabel("sakura")
-        closeLabel = QLabel()
-        imgPath = os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")
-        pixmap = QPixmap(imgPath).scaled(closeLabel.width(), closeLabel.height())
-        closeLabel.setPixmap(pixmap)
-        closeLabel.setMinimumSize(40, 40)
-        closeLabel.setMaximumSize(40, 40)
+        # closeLabel = QLabel()
+        # imgPath = os.path.join(os.path.abspath("../../"), "resource", "img", "rin.png")
+        # pixmap = QPixmap(imgPath).scaled(closeLabel.width(), closeLabel.height())
+        # closeLabel.setPixmap(pixmap)
+        # closeLabel.setMinimumSize(40, 40)
+        # closeLabel.setMaximumSize(40, 40)
 
         # 横布局
         headLayout = QHBoxLayout()
@@ -42,7 +42,7 @@ class Head(Singleton, QWidget):
         headLayout.addStretch(1)
 
         headLayout.addWidget(uNameLabel)
-        headLayout.addWidget(closeLabel)
+        # headLayout.addWidget(closeLabel)
 
         self.setLayout(headLayout)
         # self.setWindowFlags(Qt.FramelessWindowHint)

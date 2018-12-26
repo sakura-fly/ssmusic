@@ -24,7 +24,6 @@ class MainView(Singleton, QWidget):
 
         left = Left()
         left.setObjectName("left")
-        left.setStyleSheet(ss)
         songTable = SongTable()
         head = Head()
         bottom = Bottom()
